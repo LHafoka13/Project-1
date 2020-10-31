@@ -22,13 +22,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <!-- Import materialize.css
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="css/materialize.min.css"
-      media="screen,projection"
-    /> -->
+   
     <!-- Compiled and minified CSS -->
     <link
       rel="stylesheet"
@@ -50,7 +44,7 @@
 
   <body>
     <main class="container" id="search">
-      <div class="row">
+      <article class="row">
         <form class="col s12">
           <div class="row">
             <h4>Find a Plant</h4>
@@ -73,11 +67,25 @@
             <i class="fab fa-envira" id="leaf-icon"></i>
           </button>
         </form>
-      </div>
-    </main>
+      </article>
+      <article class="row">
+        <!--Empty div where the img div will be appended to-->
+        <div class="col">
+          <img id="plant-img">
+          <span id='random-div'>Hello</span>
 
-    <!-- JavaScript at end of body for optimized loading
-    <script type="text/javascript" src="js/materialize.min.js"></script> -->
+        </div>
+
+        <!--Empty div with the h4 div for description will go-->
+        <div class="col">
+
+
+        </div>
+
+
+
+      </article>
+    </main>
 
     <!--External link to JS-->
     <script type="text/javascript" src="./script.js"></script>
