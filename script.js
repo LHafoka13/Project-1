@@ -7,7 +7,27 @@ var randomEl = document.getElementById("random-div");
 var plantInput;
 var plantapiURL;
 
-console.log(location.href);
+
+var equals = window.location.href.indexOf("=");
+var amp = window.location.href.indexOf("&");
+var token = "Bearer " + window.location.href.substring(equals + 1, amp);
+
+fetch("https://api.spotify.com/v1/search?q=prince&type=artist", {
+  headers: {
+    "Authorization": token
+  }
+})
+ fetch("https://api.spotify.com/v1/search?q=prince&type=artist", {
+  headers: {
+    "Authorization": token
+  }
+}).then(function (response) {
+  console.log(response);
+   
+  });
+
+
+console.log(window.location.href);
 
 //function to run code block of searched plant
 function submitPlant(event) {
