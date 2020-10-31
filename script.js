@@ -7,6 +7,8 @@ var randomEl = document.getElementById("random-div");
 var plantInput;
 var plantapiURL;
 
+console.log(location.href);
+
 //function to run code block of searched plant
 function submitPlant(event) {
   event.preventDefault();
