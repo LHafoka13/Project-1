@@ -1,14 +1,16 @@
 var submitBtn = document.getElementById("submit-btn");
 var plantInputEl = document.getElementById("plant-input");
-
-plantapiURL = "http://www.quantitative-plant.org/api?type=TYPE&field=FIELD&q=Q";
-console.log(plantapiURL);
+var plantInput;
+var plantapiURL;
 
 function submitPlant(event) {
   event.preventDefault();
   console.log("click");
 
-  var plantInput = plantInputEl.value.trim();
+  plantInput = plantInputEl.value.trim();
+
+  plantapiURL = `https://trefle.io/api/v1/plants/search?q=${plantInput}&token=8NGOesjjgvLLOXm-MiJ-xN9-T8lWrQ-QMYNUBntLR2g`;
+  console.log(plantapiURL);
 
   if (plantInput) {
     getplantInput(plantInput);
@@ -16,10 +18,6 @@ function submitPlant(event) {
 }
 
 var getplantInput = function () {
-  plantapiURL =
-    "http://www.quantitative-plant.org/api?type=TYPE&field=FIELD&q=Q";
-  console.log(plantapiURL);
-
   fetch(plantapiURL).then(function (response) {
     if (response.ok) {
       console.log(response);
