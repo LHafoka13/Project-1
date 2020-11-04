@@ -47,7 +47,7 @@ function generateRandomSong () {
   var player = $('<iframe id="playSong" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>');
   spotifyLink = "https://open.spotify.com/embed/track/" + spotifyLink.substring(spotifyLink.indexOf(":") + 1);
   player.attr("src", spotifyLink) 
-  var test = document.querySelector('.search-results');
+  var test = document.getElementById('search-results');
   test.appendChild(player);
 }
 
