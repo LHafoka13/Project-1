@@ -13,7 +13,7 @@ var amp = window.location.href.indexOf("&");
 var token = "Bearer " + window.location.href.substring(equals + 1, amp);
 
 
- fetch("https://api.spotify.com/v1/search?q=prince&type=artist", {
+ fetch("https://api.spotify.com/v1/playlists/0Gzi5T0PokYRwdGkGctFkU/tracks", {
   headers: {
     "Authorization": token
   }
