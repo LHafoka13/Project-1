@@ -22,7 +22,7 @@ fetch("https://api.spotify.com/v1/search?q=prince&type=artist", {
     "Authorization": token
   }
 }).then(function (response) {
-  console.log(response);
+  console.log(response.json());
    
   });
 
