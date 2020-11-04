@@ -1,4 +1,4 @@
-var redirectUri = "https://lhafoka13.github.io/Project-1/"
+var redirectUri = "http://192.168.137.1:8080/"
 var authorizationToken; //this returns in the url after login
 var queryURL; // "https://api.spotify.com/v1/search?q=" + searchTerm + "&type=artist";
 var searchTerm; //this is the user input
