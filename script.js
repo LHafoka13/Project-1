@@ -6,6 +6,7 @@ var randomEl = document.getElementById("random-div");
 
 var plantInput;
 var plantapiURL;
+var playlist;
 
 
 var equals = window.location.href.indexOf("=");
@@ -20,6 +21,8 @@ var token = "Bearer " + window.location.href.substring(equals + 1, amp);
 }).then(response => response.json())
 .then(result => {
   console.log(result);
+  playlist = result.items
+
 })
 
 console.log(window.location.href);
@@ -34,6 +37,16 @@ function submitPlant(event) {
   if (plantInput) {
     getplantInput(plantInput);
   }
+}
+
+function generateRandomSong () {
+  var randomNum = Math.floor(Math.random() * 100)
+  var spotifyLink = playlist[randomNum].track.uri
+  var player = $('<iframe id="playSong" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>');
+  spotifyLink = "https://open.spotify.com/embed/track/" + spotifyLink.substring(spotifyLink.indexOf(":") + 1);
+  player.attr("src", spotifyLink) 
+  var test = document.querySelector('.search-results');
+  test.appendChild(player);
 }
 
 var getplantInput = function () {
