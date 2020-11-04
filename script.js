@@ -8,22 +8,20 @@ var plantInput;
 var plantapiURL;
 var playlist;
 
-
 var equals = window.location.href.indexOf("=");
 var amp = window.location.href.indexOf("&");
 var token = "Bearer " + window.location.href.substring(equals + 1, amp);
 
-
- fetch("https://api.spotify.com/v1/playlists/0Gzi5T0PokYRwdGkGctFkU/tracks", {
+fetch("https://api.spotify.com/v1/playlists/0Gzi5T0PokYRwdGkGctFkU/tracks", {
   headers: {
-    "Authorization": token
-  }
-}).then(response => response.json())
-.then(result => {
-  console.log(result);
-  playlist = result.items
-
+    Authorization: token,
+  },
 })
+  .then((response) => response.json())
+  .then((result) => {
+    console.log(result);
+    playlist = result.items;
+  });
 
 console.log(window.location.href);
 
@@ -38,20 +36,23 @@ function submitPlant(event) {
     getplantInput(plantInput);
     generateRandomSong();
   }
-
 }
 
-function generateRandomSong () {
-  var randomNum = Math.floor(Math.random() * 100)
-  var spotifyLink = playlist[randomNum].track.uri
-  var player = $('<iframe id="playSong" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>');
-  spotifyLink = "https://open.spotify.com/embed/track/" + spotifyLink.substring(spotifyLink.indexOf(":") + 1);
-  player.attr("src", spotifyLink) 
-  var test = document.getElementById('show-yourself');
+function generateRandomSong() {
+  var randomNum = Math.floor(Math.random() * 100);
+  var spotifyLink = playlist[randomNum].track.uri;
+  var player = $(
+    '<iframe id="playSong" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+  );
+  spotifyLink =
+    "https://open.spotify.com/embed/track/" +
+    spotifyLink.substring(spotifyLink.indexOf(":") + 1); 
+  player.attr("src", spotifyLink);
+  var test = document.getElementById("show-yourself");
   console.log(test);
   var songDivEl = document.createElement("div");
-  songDivEl.appendChild(player);
-  test.appendChild(songDivEl);
+  songDivEl.append(player);
+  test.append(songDivEl);
 }
 
 var getplantInput = function () {
