@@ -36,7 +36,9 @@ function submitPlant(event) {
   console.log(plantapiURL);
   if (plantInput) {
     getplantInput(plantInput);
+    generateRandomSong();
   }
+
 }
 
 function generateRandomSong () {
