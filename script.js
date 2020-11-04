@@ -12,20 +12,15 @@ var equals = window.location.href.indexOf("=");
 var amp = window.location.href.indexOf("&");
 var token = "Bearer " + window.location.href.substring(equals + 1, amp);
 
-fetch("https://api.spotify.com/v1/search?q=prince&type=artist", {
-  headers: {
-    "Authorization": token
-  }
-})
+
  fetch("https://api.spotify.com/v1/search?q=prince&type=artist", {
   headers: {
     "Authorization": token
   }
-}).then(function (response) {
-  console.log(response.json());
-   
-  });
-
+}).then(response => response.json())
+.then(result => {
+  console.log(result);
+})
 
 console.log(window.location.href);
 
