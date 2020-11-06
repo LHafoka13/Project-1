@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get in my Plants!</title>
+    <link rel="stylesheet" href="style.css" />
+    <nav>
+      <div class="nav-wrapper center #1b5e20 green darken-4" id="nav-text">
+        Get in my Plants!
+      </div>
+    </nav>
+
+    <!--External link to Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Actor&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+   
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- font awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container" id="search">
+      <article class="row">
+        <form class="col s12">
+          <div class="row">
+            <h4>Find a Plant</h4>
+            <div class="input-field col s12">
+              <input
+                id="plant-input"
+                class="materialize-textarea"
+                placeholder="plant name"
+              ></input>
+              
+            </div>
+          </div>
+          <button
+            class="btn waves-effect waves-light #1b5e20 green darken-4"
+            type="button"
+            name="action"
+            id="submit-btn"
+          >
+            Submit
+            <i class="fab fa-envira" id="leaf-icon"></i>
+          </button>
+        </form>
+      </article>
+      <article class="row hide" id="card-area">
+        <div class="col s12 m7">
+          <div class="card main-card" id="search-results">
+            <h1 class="center" id="plant-fam"></h1>
+            <!-- <div class="card-title center"> -->
+            <p id="plant-desc" class="center"></p>
+            <!-- </div> -->
+            <div class ="card-image center">
+              
+            <img id="plant-img">
+            
+            </div>
+            
+            
+          </div>  
+          <div id="show-yourself"></div>       
+        </div>
+
+        <!--Empty div with the h4 div for description will go-->
+        <div class="col">
+
+
+        </div>
+
+
+
+      </article>
+    </main>
+
+    <!--External link to JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
