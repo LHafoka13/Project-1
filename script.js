@@ -11,9 +11,10 @@ var plantapiURL;
 var playlist;
 
 var searchHistory = [];
-if(localStorage.getItem("searchHistory")){
+if (localStorage.getItem("searchHistory")) {
   searchHistory = localStorage.getItem("searchHistory");
 }
+console.log(searchHistory);
 
 var equals = window.location.href.indexOf("=");
 var amp = window.location.href.indexOf("&");
@@ -59,10 +60,9 @@ function generateRandomSong() {
     "https://open.spotify.com/embed/track/" +
     spotifyLink.substring(spotifyLink.indexOf(":") + 1);
 
-
   console.log(spotifyLink);
   player.setAttribute("src", spotifyLink);
-  
+
   var test = document.getElementById("show-yourself");
   console.log(test);
   var songDivEl = document.createElement("div");
@@ -80,7 +80,7 @@ var getplantInput = function (plantInput) {
         cardEl.classList.remove("hide");
 
         //defining the html content for the plant family name and plant common name
-        
+
         randomEl.textContent = data.data[0].family;
         plantdescEL.textContent = data.data[0].common_name;
 
@@ -91,7 +91,6 @@ var getplantInput = function (plantInput) {
         searchHistory.push(plantInput);
         localStorage.setItem("searchHistory", searchHistory);
         console.log(searchHistory);
-
       });
     }
   });
