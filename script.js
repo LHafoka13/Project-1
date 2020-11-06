@@ -5,7 +5,7 @@ var plantImgEl = document.getElementById("plant-img");
 var randomEl = document.getElementById("plant-fam");
 var plantdescEL = document.getElementById("plant-desc");
 var cardEl = document.getElementById("card-area");
-var plantSearchEl = document.getElementById("plant-search");
+var plantSearchEl = document.getElementById("searchHist");
 
 var plantInput;
 var plantapiURL;
@@ -15,16 +15,29 @@ var searchHistory = [];
 if (localStorage.getItem("searchHistory")) {
   searchHistory = localStorage.getItem("searchHistory");
 
-  // var searchHistoryEl = document.createElement("button");
-  // searchHistoryEl.classList = "materialize-textarea";
+  // var searchHistoryEl = document.createElement("li");
+  // searchHistoryEl.innerText = plantInput;
 
   // searchHistoryEl.textContent = localStorage.getItem("searchHistory");
 
   // plantSearchEl.appendChild(searchHistoryEl);
 
-  // // searchHistory.push(searchHistoryEl);
+  // searchHistory.push(searchHistoryEl);
+
+  var plantSearchHist = document.getElementById("saved-searches");
+  console.log(plantSearchHist);
+  var plantSearchHistListItem = document.createElement("li");
+  console.log(plantSearchHistListItem);
+  plantSearchHistListItem.append(searchHistory[i]);
+  plantSearchHist.append(plantSearchHistListItem);
+
+  // var test = document.getElementById("show-yourself");
+  // console.log(test);
+  // var songDivEl = document.createElement("div");
+  // console.log(player);
+  // songDivEl.append(player);
+  // test.append(songDivEl);
 }
-console.log(searchHistory);
 
 var equals = window.location.href.indexOf("=");
 var amp = window.location.href.indexOf("&");
@@ -47,7 +60,7 @@ console.log(window.location.href);
 function submitPlant(event) {
   event.preventDefault();
   console.log("click");
-  plantInput = plantInputEl.value.trim();
+  plantInput = plantInputEl.val().trim();
   plantapiURL = `https://trefle.io/api/v1/plants/search?q=${plantInput}&token=8NGOesjjgvLLOXm-MiJ-xN9-T8lWrQ-QMYNUBntLR2g`;
   console.log(plantapiURL);
   if (plantInput) {
@@ -98,6 +111,8 @@ var getplantInput = function (plantInput) {
         console.log(planticon);
 
         plantImgEl.setAttribute("src", planticon);
+
+        //setting what the user searches to local storage
         searchHistory.push(plantInput);
         localStorage.setItem("searchHistory", searchHistory);
         console.log(searchHistory);
