@@ -41,16 +41,19 @@ function submitPlant(event) {
 function generateRandomSong() {
   var randomNum = Math.floor(Math.random() * 100);
   var spotifyLink = playlist[randomNum].track.uri;
-  var player = $(
-    '<iframe id="playSong" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
-  );
+
+  var player = document.createElement("iframe");
+  player.attr("id", "playSong");
+  player.attr("allow", "encrypted-media");
+
   spotifyLink =
     "https://open.spotify.com/embed/track/" +
-    spotifyLink.substring(spotifyLink.indexOf(":") + 1); 
+    spotifyLink.substring(spotifyLink.indexOf(":") + 1);
   player.attr("src", spotifyLink);
   var test = document.getElementById("show-yourself");
   console.log(test);
   var songDivEl = document.createElement("div");
+  console.log(player);
   songDivEl.append(player);
   test.append(songDivEl);
 }
