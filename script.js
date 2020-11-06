@@ -43,13 +43,13 @@ function generateRandomSong() {
   var spotifyLink = playlist[randomNum].track.uri;
 
   var player = document.createElement("iframe");
-  player.attr("id", "playSong");
-  player.attr("allow", "encrypted-media");
+  player.setAttribute("id", "playSong");
+  player.setAttribute("allow", "encrypted-media");
 
   spotifyLink =
     "https://open.spotify.com/embed/track/" +
     spotifyLink.substring(spotifyLink.indexOf(":") + 1);
-  player.attr("src", spotifyLink);
+  player.setAttribute("src", spotifyLink);
   var test = document.getElementById("show-yourself");
   console.log(test);
   var songDivEl = document.createElement("div");
