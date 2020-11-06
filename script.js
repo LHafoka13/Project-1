@@ -2,7 +2,9 @@
 var submitBtn = document.getElementById("submit-btn");
 var plantInputEl = document.getElementById("plant-input");
 var plantImgEl = document.getElementById("plant-img");
-var randomEl = document.getElementById("random-div");
+var randomEl = document.getElementById("plant-fam");
+var plantdescEL = document.getElementById("plant-desc");
+var cardEl = document.getElementById("card-area");
 
 var plantInput;
 var plantapiURL;
@@ -52,8 +54,10 @@ function generateRandomSong() {
     "https://open.spotify.com/embed/track/" +
     spotifyLink.substring(spotifyLink.indexOf(":") + 1);
 
+
   console.log(spotifyLink);
   player.setAttribute("src", spotifyLink);
+  
   var test = document.getElementById("show-yourself");
   console.log(test);
   var songDivEl = document.createElement("div");
@@ -68,9 +72,11 @@ var getplantInput = function () {
       console.log(response);
       response.json().then(function (data) {
         console.log(data);
+        cardEl.classList.remove("hide");
 
-        // plantImgEl.innerHTML = data.data[0].img_url;
+        //defining the html content for the plant family name and plant common name
         randomEl.textContent = data.data[0].family;
+        plantdescEL.textContent = data.data[0].common_name;
 
         var planticon = data.data[0].image_url;
         console.log(planticon);
