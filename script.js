@@ -28,9 +28,12 @@ if (localStorage.getItem("searchHistory")) {
     var plantSearchHist = document.getElementById("saved-searches");
     console.log(plantSearchHist);
     var plantSearchHistListItem = document.createElement("li");
+
     console.log(plantSearchHistListItem);
     plantSearchHistListItem.append(searchHistory[i]);
     plantSearchHist.append(plantSearchHistListItem);
+
+    // searchHistory.push(plantSearchHistListItem);
   }
 
   // var test = document.getElementById("show-yourself");
