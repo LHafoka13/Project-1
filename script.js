@@ -24,12 +24,14 @@ if (localStorage.getItem("searchHistory")) {
 
   // searchHistory.push(searchHistoryEl);
 
-  var plantSearchHist = document.getElementById("saved-searches");
-  console.log(plantSearchHist);
-  var plantSearchHistListItem = document.createElement("li");
-  console.log(plantSearchHistListItem);
-  plantSearchHistListItem.append(searchHistory[i]);
-  plantSearchHist.append(plantSearchHistListItem);
+  for (var i = 0; i < searchHistory.length; i++) {
+    var plantSearchHist = document.getElementById("saved-searches");
+    console.log(plantSearchHist);
+    var plantSearchHistListItem = document.createElement("li");
+    console.log(plantSearchHistListItem);
+    plantSearchHistListItem.append(searchHistory[i]);
+    plantSearchHist.append(plantSearchHistListItem);
+  }
 
   // var test = document.getElementById("show-yourself");
   // console.log(test);
@@ -60,7 +62,7 @@ console.log(window.location.href);
 function submitPlant(event) {
   event.preventDefault();
   console.log("click");
-  plantInput = plantInputEl.val().trim();
+  plantInput = plantInputEl.value.trim();
   plantapiURL = `https://trefle.io/api/v1/plants/search?q=${plantInput}&token=8NGOesjjgvLLOXm-MiJ-xN9-T8lWrQ-QMYNUBntLR2g`;
   console.log(plantapiURL);
   if (plantInput) {
