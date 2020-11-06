@@ -5,6 +5,7 @@ var plantImgEl = document.getElementById("plant-img");
 var randomEl = document.getElementById("plant-fam");
 var plantdescEL = document.getElementById("plant-desc");
 var cardEl = document.getElementById("card-area");
+var plantSearchEl = document.getElementById("plant-search");
 
 var plantInput;
 var plantapiURL;
@@ -13,6 +14,13 @@ var playlist;
 var searchHistory = [];
 if (localStorage.getItem("searchHistory")) {
   searchHistory = localStorage.getItem("searchHistory");
+
+  var searchHistoryEl = document.createElement("button");
+  searchHistoryEl.classList = "materialize=textarea";
+
+  searchHistoryEl.textContent = localStorage.getItem("searchHistory");
+
+  plantSearchEl.appendChild(searchHistoryEl);
 }
 console.log(searchHistory);
 
