@@ -16,11 +16,24 @@ body {
   font-family: "Actor", sans-serif;
 }
 
-
 #search {
   margin-top: 50px;
 }
 
 #nav-text {
   font-size: 50px;
+}
+
+#plant-img {
+  height: 90%;
+  width: 80%;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+
+#plant-fam {
+  font-size: 40px;
 }
