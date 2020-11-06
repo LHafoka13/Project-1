@@ -15,12 +15,14 @@ var searchHistory = [];
 if (localStorage.getItem("searchHistory")) {
   searchHistory = localStorage.getItem("searchHistory");
 
-  var searchHistoryEl = document.createElement("button");
-  searchHistoryEl.classList = "materialize=textarea";
+  // var searchHistoryEl = document.createElement("button");
+  // searchHistoryEl.classList = "materialize-textarea";
 
-  searchHistoryEl.textContent = localStorage.getItem("searchHistory");
+  // searchHistoryEl.textContent = localStorage.getItem("searchHistory");
 
-  plantSearchEl.appendChild(searchHistoryEl);
+  // plantSearchEl.appendChild(searchHistoryEl);
+
+  // // searchHistory.push(searchHistoryEl);
 }
 console.log(searchHistory);
 
