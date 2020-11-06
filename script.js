@@ -28,7 +28,7 @@ if (localStorage.getItem("searchHistory")) {
   console.log(plantSearchHist);
   var plantSearchHistListItem = document.createElement("li");
   console.log(plantSearchHistListItem);
-  plantSearchHistListItem.append(searchHistory[i]);
+  plantSearchHistListItem.append(searchHistory);
   plantSearchHist.append(plantSearchHistListItem);
 
   // var test = document.getElementById("show-yourself");
