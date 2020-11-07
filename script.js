@@ -11,9 +11,11 @@ var plantInput;
 var plantapiURL;
 var playlist;
 
+
 // var searchHistory = [];
 if (localStorage.getItem("searchPlants")) {
   searchHistory = localStorage.getItem("searchPlants");
+
 
   // var searchHistoryEl = document.createElement("li");
   // searchHistoryEl.innerText = plantInput;
@@ -23,6 +25,21 @@ if (localStorage.getItem("searchPlants")) {
   // plantSearchEl.appendChild(searchHistoryEl);
 
   // searchHistory.push(searchHistoryEl);
+
+for (var i = 0; i < searchHistory.length; i++) {
+    var plantSearchHist = document.getElementById("saved-searches");
+    console.log(plantSearchHist);
+    var plantSearchHistListItem = document.createElement("li");
+    plantSearchHistListItem.classList = "collection-item"
+
+    console.log(plantSearchHistListItem);
+    plantSearchHistListItem.innerHTML = searchHistory[i]
+    // plantSearchHistListItem.append(plantSearchHist);
+    plantSearchHist.append(plantSearchHistListItem);
+
+    // searchHistory.push(plantSearchHistListItem);
+  }
+
 
   // var test = document.getElementById("show-yourself");
   // console.log(test);
@@ -60,15 +77,22 @@ function submitPlant(event) {
     getplantInput(plantInput);
     generateRandomSong();
   }
+  //  searchHistory.push(plantInput.value);
+  //  localStorage.setItem("searchHistory", searchHistory);
+  //  console.log(searchHistory);
 }
+
+var player = document.createElement("iframe");
+  player.setAttribute("id", "playSong");
+  player.setAttribute("allow", "encrypted-media");
 
 function generateRandomSong() {
   var randomNum = Math.floor(Math.random() * 100);
   var spotifyLink = playlist[randomNum].track.uri;
 
-  var player = document.createElement("iframe");
-  player.setAttribute("id", "playSong");
-  player.setAttribute("allow", "encrypted-media");
+  // var player = document.createElement("iframe");
+  // player.setAttribute("id", "playSong");
+  // player.setAttribute("allow", "encrypted-media");
 
   spotifyLink = spotifyLink.substring(spotifyLink.indexOf(":") + 1);
 
@@ -105,6 +129,7 @@ var getplantInput = function (plantInput) {
 
         plantImgEl.setAttribute("src", planticon);
 
+
         //setting what the user searches to local storage
         var searchPlants = [];
 
@@ -130,6 +155,12 @@ var getplantInput = function (plantInput) {
 
           // searchHistory.push(plantSearchHistListItem);
         }
+
+        // setting what the user searches to local storage
+        searchHistory.push(plantInput);
+        localStorage.setItem("searchHistory", searchHistory);
+        console.log(searchHistory);
+
       });
     }
   });
