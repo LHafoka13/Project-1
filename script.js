@@ -28,10 +28,10 @@ if (localStorage.getItem("searchHistory")) {
     var plantSearchHist = document.getElementById("saved-searches");
     console.log(plantSearchHist);
     var plantSearchHistListItem = document.createElement("li");
-    plantSearchHistListItem.classList.add("collection-item")
+    plantSearchHistListItem.classList = "collection-item"
 
     console.log(plantSearchHistListItem);
-    plantSearchHistListItem.innerHTML(searchHistory[i])
+    plantSearchHistListItem.innerHTML = searchHistory[i];
     // plantSearchHistListItem.append(plantSearchHist);
     plantSearchHist.append(plantSearchHistListItem);
 
