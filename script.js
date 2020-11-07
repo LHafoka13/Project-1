@@ -31,7 +31,7 @@ if (localStorage.getItem("searchHistory")) {
     plantSearchHistListItem.classList = "collection-item"
 
     console.log(plantSearchHistListItem);
-    plantSearchHistListItem.innerHTML = searchHistory[i];
+    plantSearchHistListItem.innerHTML = searchHistory[i].value.trim();
     // plantSearchHistListItem.append(plantSearchHist);
     plantSearchHist.append(plantSearchHistListItem);
 
@@ -120,7 +120,7 @@ var getplantInput = function (plantInput) {
         plantImgEl.setAttribute("src", planticon);
 
         //setting what the user searches to local storage
-        searchHistory.push(plantInput);
+        searchHistory.push(plantInput.value);
         localStorage.setItem("searchHistory", searchHistory);
         console.log(searchHistory);
       });
