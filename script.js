@@ -24,17 +24,18 @@ if (localStorage.getItem("searchHistory")) {
 
   // searchHistory.push(searchHistoryEl);
 
-  for (var i = 0; i < searchHistory.length; i++) {
+  // for (var i = 0; i < searchHistory.length; i++) {
     var plantSearchHist = document.getElementById("saved-searches");
     console.log(plantSearchHist);
     var plantSearchHistListItem = document.createElement("li");
+    plantSearchHistListItem.classList.add("collection-item")
 
     console.log(plantSearchHistListItem);
     plantSearchHistListItem.append(searchHistory[i]);
     plantSearchHist.append(plantSearchHistListItem);
 
     // searchHistory.push(plantSearchHistListItem);
-  }
+  // }
 
   // var test = document.getElementById("show-yourself");
   // console.log(test);
