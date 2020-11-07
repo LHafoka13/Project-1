@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Get in my Plants!</title>
-    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style.css" />
     <nav>
-      <div class="nav-wrapper center  darken-4" id="nav-text">
-        Welcome to Our Plants!
+      <div class="nav-wrapper center #1b5e20 green darken-4" id="nav-text">
+        Get in my Plants!
       </div>
     </nav>
 
@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-
+   
     <!-- Compiled and minified CSS -->
     <link
       rel="stylesheet"
@@ -39,45 +39,75 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <main class="container" id="search">
-      <article class="row">
-        <div class="col s12">
+      <article class="row" id="plant-search">
+        <form class="col s12">
           <div class="row">
-            <h4>
-              Before continuing to our application, please sign in to
-              Spotify....
-            </h4>
+            <h4>Find a Plant</h4>
+            <div class="input-field col s12">
+              <input
+                id="plant-input"
+                class="materialize-textarea"
+                placeholder="plant name"
+              ></input>
+            </div>
           </div>
-        </div>
+          <button
+            class="btn waves-effect waves-light #1b5e20 green darken-4"
+            type="button"
+            name="action"
+            id="submit-btn"
+          >
+            Submit
+            <i class="fab fa-envira" id="leaf-icon"></i>
+          </button>
+        </form>
+        
+        <!-- <button class="materialize-textarea">Info Here</button> -->
       </article>
-      <article class="row">
-        <button
-          class="btn waves-effect waves-light darken-4"
-          type="button"
-          name="action"
-          id="auth"
-        >
-          Sign In to Spotify
-          <i class="fab fa-envira" id="leaf-icon"></i>
-        </button>
+      <artcile class="row">
+        <ul id="saved-searches" class="collection">
+          
+        </ul>
+      </artcile>
+      
+      <article class="row hide" id="card-area">
+        <div class="col s12 m7">
+          <div class="card main-card" id="search-results">
+            <h1 class="center" id="plant-fam"></h1>
+            <!-- <div class="card-title center"> -->
+            <p id="plant-desc" class="center"></p>
+            <!-- </div> -->
+            <div class ="card-image center">
+              
+            <img id="plant-img">
+            
+            </div>
+            
+            
+          </div>  
+          <div id="show-yourself"></div>       
+        </div>
+
+        <!--Empty div with the h4 div for description will go-->
+        <div class="col">
+
+
+        </div>
+
+
+
       </article>
     </main>
 
- 
-
-    <script src="script2.js"></script>
+    <!--External link to JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./script.js"></script>
   </body>
-
-  <footer class="page-footer">
-    <div class="container">
-    <div class="footer-copyright">
-      <div class="container">
-      Project #1 by Lily'okalani Hafoka, Lindsay Bordelon, Robby Ray
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      </div>
-    </div>
-  </footer>
 </html>
