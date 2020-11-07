@@ -26,19 +26,19 @@ if (localStorage.getItem("searchPlants")) {
 
   // searchHistory.push(searchHistoryEl);
 
-for (var i = 0; i < searchHistory.length; i++) {
-    var plantSearchHist = document.getElementById("saved-searches");
-    console.log(plantSearchHist);
-    var plantSearchHistListItem = document.createElement("li");
-    plantSearchHistListItem.classList = "collection-item"
+// for (var i = 0; i < searchHistory.length; i++) {
+//     var plantSearchHist = document.getElementById("saved-searches");
+//     console.log(plantSearchHist);
+//     var plantSearchHistListItem = document.createElement("li");
+//     plantSearchHistListItem.classList = "collection-item"
 
-    console.log(plantSearchHistListItem);
-    plantSearchHistListItem.innerHTML = searchHistory[i]
-    // plantSearchHistListItem.append(plantSearchHist);
-    plantSearchHist.append(plantSearchHistListItem);
+//     console.log(plantSearchHistListItem);
+//     plantSearchHistListItem.innerHTML = searchHistory[i]
+//     // plantSearchHistListItem.append(plantSearchHist);
+//     plantSearchHist.append(plantSearchHistListItem);
 
-    // searchHistory.push(plantSearchHistListItem);
-  }
+//     // searchHistory.push(plantSearchHistListItem);
+//   }
 
 
   // var test = document.getElementById("show-yourself");
