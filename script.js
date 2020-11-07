@@ -12,10 +12,30 @@ var plantapiURL;
 var playlist;
 
 
-// var searchHistory = [];
-if (localStorage.getItem("searchPlants")) {
-  searchHistory = localStorage.getItem("searchPlants");
+var searchHistory = [];
+if (localStorage.getItem("searchHistory")) {
+  searchHistory = localStorage.getItem("searchHistory");
+  var searchHistoryArray = [];
+  searchHistoryArray = searchHistory.split(",");
 
+        for (var i = 0; i < searchHistoryArray.length; i++) {
+          // var plantString = searchPlants;
+          // var newPlantString = new Array();
+          // newPlantString = plantString.split(",");
+          // console.log(newPlantString);
+
+          var plantSearchHist = document.getElementById("saved-searches");
+          console.log(plantSearchHist);
+          var plantSearchHistListItem = document.createElement("li");
+          plantSearchHistListItem.classList = "collection-item";
+
+          console.log(plantSearchHistListItem);
+          plantSearchHistListItem.innerHTML = searchHistoryArray[i];
+          // plantSearchHistListItem.append(plantSearchHist);
+          plantSearchHist.append(plantSearchHistListItem);
+
+          // searchHistory.push(plantSearchHistListItem);
+        }
 
   // var searchHistoryEl = document.createElement("li");
   // searchHistoryEl.innerText = plantInput;
@@ -77,6 +97,7 @@ function submitPlant(event) {
     getplantInput(plantInput);
     generateRandomSong();
   }
+  
   //  searchHistory.push(plantInput.value);
   //  localStorage.setItem("searchHistory", searchHistory);
   //  console.log(searchHistory);
@@ -131,13 +152,41 @@ var getplantInput = function (plantInput) {
 
 
         //setting what the user searches to local storage
-        var searchPlants = [];
+        // var searchPlants = [];
 
-        searchPlants.push(plantInput);
-        localStorage.setItem("searchPlants", searchPlants);
-        console.log(searchPlants);
+        // searchPlants.push(plantInput);
+        // localStorage.setItem("searchPlants", searchPlants);
+        // console.log(searchPlants);
 
-        for (var i = 0; i < searchPlants.length; i++) {
+        // for (var i = 0; i < searchPlants.length; i++) {
+        //   // var plantString = searchPlants;
+        //   // var newPlantString = new Array();
+        //   // newPlantString = plantString.split(",");
+        //   // console.log(newPlantString);
+
+        //   var plantSearchHist = document.getElementById("saved-searches");
+        //   console.log(plantSearchHist);
+        //   var plantSearchHistListItem = document.createElement("li");
+        //   plantSearchHistListItem.classList = "collection-item";
+
+        // //   console.log(plantSearchHistListItem);
+        //   plantSearchHistListItem.innerHTML = plantInput;
+        //   plantSearchHistListItem.append(plantSearchHist);
+        //   plantSearchHist.append(plantSearchHistListItem);
+
+        //   // searchHistory.push(plantSearchHistListItem);
+        // }
+
+        // setting what the user searches to local storage
+        searchHistoryArray.push(plantInput);
+        localStorage.setItem("searchHistory", searchHistoryArray);
+        searchHistory = localStorage.getItem("searchHistory");
+        var historyDiv = $("#saved-searches")
+        historyDiv.empty();
+        // if (historyDiv.firstChild) {
+        //   historyDiv.removeChild(historyDiv.lastChild)
+        // }
+        for (var i = 0; i < searchHistoryArray.length; i++) {
           // var plantString = searchPlants;
           // var newPlantString = new Array();
           // newPlantString = plantString.split(",");
@@ -149,17 +198,13 @@ var getplantInput = function (plantInput) {
           plantSearchHistListItem.classList = "collection-item";
 
           console.log(plantSearchHistListItem);
-          plantSearchHistListItem.innerHTML = searchPlants[i];
+          plantSearchHistListItem.innerHTML = searchHistoryArray[i];
           // plantSearchHistListItem.append(plantSearchHist);
           plantSearchHist.append(plantSearchHistListItem);
 
           // searchHistory.push(plantSearchHistListItem);
         }
-
-        // setting what the user searches to local storage
-        searchHistory.push(plantInput);
-        localStorage.setItem("searchHistory", searchHistory);
-        console.log(searchHistory);
+        console.log(searchHistoryArray);
 
       });
     }
