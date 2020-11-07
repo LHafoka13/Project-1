@@ -11,9 +11,9 @@ var plantInput;
 var plantapiURL;
 var playlist;
 
-var searchHistory = [];
-if (localStorage.getItem("searchHistory")) {
-  searchHistory = localStorage.getItem("searchHistory");
+// var searchHistory = [];
+if (localStorage.getItem("searchPlants")) {
+  searchHistory = localStorage.getItem("searchPlants");
 
   // var searchHistoryEl = document.createElement("li");
   // searchHistoryEl.innerText = plantInput;
@@ -23,20 +23,6 @@ if (localStorage.getItem("searchHistory")) {
   // plantSearchEl.appendChild(searchHistoryEl);
 
   // searchHistory.push(searchHistoryEl);
-
-  for (var i = 0; i < searchHistory.length; i++) {
-    var plantSearchHist = document.getElementById("saved-searches");
-    console.log(plantSearchHist);
-    var plantSearchHistListItem = document.createElement("li");
-    plantSearchHistListItem.classList = "collection-item"
-
-    console.log(plantSearchHistListItem);
-    plantSearchHistListItem.innerHTML = searchHistory[i].value.trim();
-    // plantSearchHistListItem.append(plantSearchHist);
-    plantSearchHist.append(plantSearchHistListItem);
-
-    // searchHistory.push(plantSearchHistListItem);
-  }
 
   // var test = document.getElementById("show-yourself");
   // console.log(test);
@@ -120,9 +106,30 @@ var getplantInput = function (plantInput) {
         plantImgEl.setAttribute("src", planticon);
 
         //setting what the user searches to local storage
-        searchHistory.push(plantInput.value);
-        localStorage.setItem("searchHistory", searchHistory);
-        console.log(searchHistory);
+        var searchPlants = [];
+
+        searchPlants.push(plantInput);
+        localStorage.setItem("searchPlants", searchPlants);
+        console.log(searchPlants);
+
+        for (var i = 0; i < searchPlants.length; i++) {
+          // var plantString = searchPlants;
+          // var newPlantString = new Array();
+          // newPlantString = plantString.split(",");
+          // console.log(newPlantString);
+
+          var plantSearchHist = document.getElementById("saved-searches");
+          console.log(plantSearchHist);
+          var plantSearchHistListItem = document.createElement("li");
+          plantSearchHistListItem.classList = "collection-item";
+
+          console.log(plantSearchHistListItem);
+          plantSearchHistListItem.innerHTML = searchPlants[i];
+          // plantSearchHistListItem.append(plantSearchHist);
+          plantSearchHist.append(plantSearchHistListItem);
+
+          // searchHistory.push(plantSearchHistListItem);
+        }
       });
     }
   });
