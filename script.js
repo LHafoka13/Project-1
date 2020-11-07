@@ -80,13 +80,17 @@ function submitPlant(event) {
   //  console.log(searchHistory);
 }
 
+var player = document.createElement("iframe");
+  player.setAttribute("id", "playSong");
+  player.setAttribute("allow", "encrypted-media");
+
 function generateRandomSong() {
   var randomNum = Math.floor(Math.random() * 100);
   var spotifyLink = playlist[randomNum].track.uri;
 
-  var player = document.createElement("iframe");
-  player.setAttribute("id", "playSong");
-  player.setAttribute("allow", "encrypted-media");
+  // var player = document.createElement("iframe");
+  // player.setAttribute("id", "playSong");
+  // player.setAttribute("allow", "encrypted-media");
 
   spotifyLink = spotifyLink.substring(spotifyLink.indexOf(":") + 1);
 
