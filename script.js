@@ -14,6 +14,7 @@ var playlist;
 var searchHistory = [];
 if (localStorage.getItem("searchHistory")) {
   searchHistory = localStorage.getItem("searchHistory");
+  
 
   // var searchHistoryEl = document.createElement("li");
   // searchHistoryEl.innerText = plantInput;
@@ -31,7 +32,7 @@ if (localStorage.getItem("searchHistory")) {
     plantSearchHistListItem.classList = "collection-item"
 
     console.log(plantSearchHistListItem);
-    plantSearchHistListItem.innerHTML = searchHistory[i].value.trim();
+    plantSearchHistListItem.innerHTML = searchHistory[i]
     // plantSearchHistListItem.append(plantSearchHist);
     plantSearchHist.append(plantSearchHistListItem);
 
@@ -74,6 +75,9 @@ function submitPlant(event) {
     getplantInput(plantInput);
     generateRandomSong();
   }
+  //  searchHistory.push(plantInput.value);
+  //  localStorage.setItem("searchHistory", searchHistory);
+  //  console.log(searchHistory);
 }
 
 function generateRandomSong() {
@@ -119,8 +123,8 @@ var getplantInput = function (plantInput) {
 
         plantImgEl.setAttribute("src", planticon);
 
-        //setting what the user searches to local storage
-        searchHistory.push(plantInput.value);
+        // setting what the user searches to local storage
+        searchHistory.push(plantInput);
         localStorage.setItem("searchHistory", searchHistory);
         console.log(searchHistory);
       });
