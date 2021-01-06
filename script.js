@@ -16,6 +16,8 @@ var searchHistory = [];
 if (localStorage.getItem("searchHistory")) {
   searchHistory = localStorage.getItem("searchHistory");
 
+  searchHistoryArray = searchHistory.split(",");
+
         for (var i = 0; i < searchHistoryArray.length; i++) {
          
           var plantSearchHist = document.getElementById("saved-searches");
