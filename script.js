@@ -15,15 +15,9 @@ var searchHistoryArray = [];
 var searchHistory = [];
 if (localStorage.getItem("searchHistory")) {
   searchHistory = localStorage.getItem("searchHistory");
-  console.log(searchHistoryArray);
-  // searchHistoryArray = searchHistory.split(",");
 
         for (var i = 0; i < searchHistoryArray.length; i++) {
-          // var plantString = searchPlants;
-          // var newPlantString = new Array();
-          // newPlantString = plantString.split(",");
-          // console.log(newPlantString);
-
+         
           var plantSearchHist = document.getElementById("saved-searches");
           console.log(plantSearchHist);
           var plantSearchHistListItem = document.createElement("li");
@@ -31,42 +25,13 @@ if (localStorage.getItem("searchHistory")) {
 
           console.log(plantSearchHistListItem);
           plantSearchHistListItem.innerHTML = searchHistoryArray[i];
-          // plantSearchHistListItem.append(plantSearchHist);
+ 
           plantSearchHist.append(plantSearchHistListItem);
 
-          // searchHistory.push(plantSearchHistListItem);
+
         }
 
-  // var searchHistoryEl = document.createElement("li");
-  // searchHistoryEl.innerText = plantInput;
 
-  // searchHistoryEl.textContent = localStorage.getItem("searchHistory");
-
-  // plantSearchEl.appendChild(searchHistoryEl);
-
-  // searchHistory.push(searchHistoryEl);
-
-// for (var i = 0; i < searchHistory.length; i++) {
-//     var plantSearchHist = document.getElementById("saved-searches");
-//     console.log(plantSearchHist);
-//     var plantSearchHistListItem = document.createElement("li");
-//     plantSearchHistListItem.classList = "collection-item"
-
-//     console.log(plantSearchHistListItem);
-//     plantSearchHistListItem.innerHTML = searchHistory[i]
-//     // plantSearchHistListItem.append(plantSearchHist);
-//     plantSearchHist.append(plantSearchHistListItem);
-
-//     // searchHistory.push(plantSearchHistListItem);
-//   }
-
-
-  // var test = document.getElementById("show-yourself");
-  // console.log(test);
-  // var songDivEl = document.createElement("div");
-  // console.log(player);
-  // songDivEl.append(player);
-  // test.append(songDivEl);
 }
 
 var equals = window.location.href.indexOf("=");
@@ -98,9 +63,7 @@ function submitPlant(event) {
     generateRandomSong();
   }
   
-  //  searchHistory.push(plantInput.value);
-  //  localStorage.setItem("searchHistory", searchHistory);
-  //  console.log(searchHistory);
+
 }
 
 var player = document.createElement("iframe");
@@ -111,9 +74,6 @@ function generateRandomSong() {
   var randomNum = Math.floor(Math.random() * 100);
   var spotifyLink = playlist[randomNum].track.uri;
 
-  // var player = document.createElement("iframe");
-  // player.setAttribute("id", "playSong");
-  // player.setAttribute("allow", "encrypted-media");
 
   spotifyLink = spotifyLink.substring(spotifyLink.indexOf(":") + 1);
 
@@ -149,34 +109,7 @@ var getplantInput = function (plantInput) {
         console.log(planticon);
 
         plantImgEl.setAttribute("src", planticon);
-
-
-        //setting what the user searches to local storage
-        // var searchPlants = [];
-
-        // searchPlants.push(plantInput);
-        // localStorage.setItem("searchPlants", searchPlants);
-        // console.log(searchPlants);
-
-        // for (var i = 0; i < searchPlants.length; i++) {
-        //   // var plantString = searchPlants;
-        //   // var newPlantString = new Array();
-        //   // newPlantString = plantString.split(",");
-        //   // console.log(newPlantString);
-
-        //   var plantSearchHist = document.getElementById("saved-searches");
-        //   console.log(plantSearchHist);
-        //   var plantSearchHistListItem = document.createElement("li");
-        //   plantSearchHistListItem.classList = "collection-item";
-
-        // //   console.log(plantSearchHistListItem);
-        //   plantSearchHistListItem.innerHTML = plantInput;
-        //   plantSearchHistListItem.append(plantSearchHist);
-        //   plantSearchHist.append(plantSearchHistListItem);
-
-        //   // searchHistory.push(plantSearchHistListItem);
-        // }
-
+        
         // setting what the user searches to local storage
         console.log(searchHistoryArray);
         searchHistoryArray.push(plantInput);
@@ -184,14 +117,9 @@ var getplantInput = function (plantInput) {
         searchHistory = localStorage.getItem("searchHistory");
         var historyDiv = $("#saved-searches")
         historyDiv.empty();
-        // if (historyDiv.firstChild) {
-        //   historyDiv.removeChild(historyDiv.lastChild)
-        // }
+       
         for (var i = 0; i < searchHistoryArray.length; i++) {
-          // var plantString = searchPlants;
-          // var newPlantString = new Array();
-          // newPlantString = plantString.split(",");
-          // console.log(newPlantString);
+      
 
           var plantSearchHist = document.getElementById("saved-searches");
           console.log(plantSearchHist);
@@ -200,10 +128,10 @@ var getplantInput = function (plantInput) {
 
           console.log(plantSearchHistListItem);
           plantSearchHistListItem.innerHTML = searchHistoryArray[i];
-          // plantSearchHistListItem.append(plantSearchHist);
+       
           plantSearchHist.append(plantSearchHistListItem);
 
-          // searchHistory.push(plantSearchHistListItem);
+
         }
         console.log(searchHistoryArray);
 
