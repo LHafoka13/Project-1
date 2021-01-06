@@ -11,12 +11,12 @@ var plantInput;
 var plantapiURL;
 var playlist;
 
-
+var searchHistoryArray = [];
 var searchHistory = [];
 if (localStorage.getItem("searchHistory")) {
   searchHistory = localStorage.getItem("searchHistory");
-  var searchHistoryArray = [];
-  searchHistoryArray = searchHistory.split(",");
+  console.log(searchHistoryArray);
+  // searchHistoryArray = searchHistory.split(",");
 
         for (var i = 0; i < searchHistoryArray.length; i++) {
           // var plantString = searchPlants;
@@ -178,6 +178,7 @@ var getplantInput = function (plantInput) {
         // }
 
         // setting what the user searches to local storage
+        console.log(searchHistoryArray);
         searchHistoryArray.push(plantInput);
         localStorage.setItem("searchHistory", searchHistoryArray);
         searchHistory = localStorage.getItem("searchHistory");
